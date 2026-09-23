@@ -134,11 +134,21 @@ def formatear_fragmentos(fragmentos: list[dict]) -> str:
     if not fragmentos:
         return ("Sin resultados para esa consulta con esos filtros. "
                 "Prueba a quitar algún filtro o a reformular la búsqueda.")
-    return "\n\n---\n\n".join(
-        f"[{f['chunk_id']}] {f['ticker']} FY{f['fiscal_year']} "
-        f"Item {f['item']} (similitud {f['puntuacion']:.3f})\n{f['texto']}"
-        for f in fragmentos
-    )
+
+    partes = []
+
+    for f in fragmentos:
+        cabecera = (
+            f"[{f['chunk_id']}] {f['ticker']} FY{f['fiscal_year']} "
+            f"Item {f['item']} (similitud {f['puntuacion']:.3f})"
+        )
+
+        if f["contiene_tabla"]:
+            cabecera += "\nNota: este fragmento contiene contenido tabular."
+
+        partes.append(f"{cabecera}\n{f['texto']}")
+
+    return "\n\n---\n\n".join(partes)
 
 
 # ---------------------------------------------------------------------------
@@ -629,7 +639,10 @@ Reglas:
 - Para riesgos, estrategia o comentarios de la dirección, usa search_filings.
 - Si no sabes si una compañía o un ejercicio están en el corpus, empieza por
   list_available.
-- El corpus está en inglés: escribe las consultas de búsqueda en inglés.
+- Algunos fragmentos pueden indicar que contienen contenido tabular. Si necesitas
+  esa información para responder, comprueba que el fragmento proporciona contexto
+  suficiente. Si la tabla está incompleta o necesitas más contexto para
+  interpretarla correctamente, usa read_section.
 - Cita el chunk_id del fragmento en el que te apoyes.
 - Si el dato no está en el corpus, dilo. No lo estimes.
 """
