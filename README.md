@@ -9,9 +9,10 @@ El objetivo de la práctica es trabajar con documentación financiera mediante t
 El repositorio incluye:
 
 * **Notebooks de Google Colab** con el desarrollo de la práctica.
+* **`agente_10k.py`**: funciones generales para ejecutar el agente (tools, etc.).
 * **`miax_s1.py`**: funciones utilizadas en la primera parte de la práctica.
 * **`miax_s2.py`**: funciones utilizadas en la segunda parte de la práctica.
-* Ficheros necesarios para la carga y procesamiento del corpus.
+* No incluye los ficheros necesarios para la carga y procesamiento del corpus. Deberá hacerse una copia de la carpeta de Drive indicada en el Notebook.
 
 ## Tecnologías
 
