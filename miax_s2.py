@@ -144,7 +144,7 @@ def formatear_fragmentos(fragmentos: list[dict]) -> str:
         )
 
         if f["contiene_tabla"]:
-            cabecera += "\nNota: este fragmento contiene contenido tabular."
+            cabecera += "\nNote: this fragment contains tabular content.\n"
 
         partes.append(f"{cabecera}\n{f['texto']}")
 
@@ -639,10 +639,11 @@ Reglas:
 - Para riesgos, estrategia o comentarios de la dirección, usa search_filings.
 - Si no sabes si una compañía o un ejercicio están en el corpus, empieza por
   list_available.
-- Algunos fragmentos pueden indicar que contienen contenido tabular. Si necesitas
-  esa información para responder, comprueba que el fragmento proporciona contexto
-  suficiente. Si la tabla está incompleta o necesitas más contexto para
-  interpretarla correctamente, usa read_section.
+- Algunos fragmentos pueden indicar que contienen contenido tabular. Las tablas
+  suelen aparecer acompañadas de títulos, encabezados o texto explicativo. Si
+  necesitas información tabular para responder, comprueba que el fragmento
+  contiene de forma clara los datos y el contexto necesarios. Si no puedes
+  verificarlo o necesitas más contexto, usa read_section.
 - Cita el chunk_id del fragmento en el que te apoyes.
 - Si el dato no está en el corpus, dilo. No lo estimes.
 """
