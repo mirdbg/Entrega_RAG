@@ -277,6 +277,11 @@ Reglas obligatorias:
 - Pasa ticker, fiscal_year e item como filtros siempre que puedan deducirse de la pregunta.
 - En comparativas entre ejercicios consulta cada ejercicio necesario. Si además se pregunta por la causa, combina XBRL para las cifras y search_filings para la explicación.
 - Usa read_section solo si los fragmentos no bastan.
+- Algunos fragmentos pueden indicar que contienen contenido tabular. Las tablas
+  suelen aparecer acompañadas de títulos, encabezados o texto explicativo. Si
+  necesitas información tabular para responder, comprueba que el fragmento
+  contiene de forma clara los datos y el contexto necesarios. Si no puedes
+  verificarlo o necesitas más contexto, usa read_section.
 - Si dudas sobre la cobertura, usa list_available.
 - No inventes conceptos XBRL. Si un concepto no existe, utiliza la lista de conceptos disponibles que devuelve get_xbrl_fact para corregirte.
 - Cuando uses texto, devuelve chunk_id y una cita literal y CONTIGUA del chunk (nunca resumas ni
