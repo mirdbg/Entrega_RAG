@@ -141,6 +141,7 @@ def buscar_hibrido(query: str, ticker=None, fiscal_year=None, item=None,
     return salida
 
 
+
 _REESCRITOR = None
 INSTRUCCION_REESCRITURA = """Rewrite the user's question as ONE concise English search query for a 10-K filing index. Preserve company, fiscal year and financial concept. Prefer terminology likely to occur literally in the filing. Return only the query, with no explanation."""
 
@@ -176,7 +177,7 @@ from langchain.tools import tool
 def list_available() -> str:
     """Devuelve compañías, ejercicios fiscales y secciones disponibles.
 
-    Úsala cuando no estés seguro de que una compañía, ejercicio o sección exista
+    Úsala SIEMPRE para comprobar que una compañía, ejercicio o sección exista
     en el corpus. No inventes cobertura que esta herramienta no confirme.
     """
     lineas = []
