@@ -12,7 +12,7 @@ El repositorio incluye:
 * **`agente_10k.py`**: funciones generales para ejecutar el agente (tools, etc.).
 * **`miax_s1.py`**: funciones utilizadas en la primera parte de la práctica.
 * **`miax_s2.py`**: funciones utilizadas en la segunda parte de la práctica.
-* No incluye los ficheros necesarios para la carga y procesamiento del corpus. Deberá hacerse una copia de la carpeta de Drive indicada en el Notebook.
+* No incluye los ficheros necesarios para la carga y procesamiento del corpus. Deberá hacerse una copia de esta [carpeta de Drive](https://drive.google.com/drive/folders/1e0SbsS9D4nKC9B9suKhcenFSK4iEcwF3?usp=sharing).
 
 ## Tecnologías
 
